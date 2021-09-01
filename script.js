@@ -39,8 +39,7 @@ function buildQuiz() {
      let numCorrect = 0;
      // for each question
      myQuestions.forEach((currentQuestion, questionNumber) => {
-         // find each question
-         myQuestions.forEach((currentQuestion, questionNumber))
+       
      })
    }
 
