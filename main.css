@@ -9,7 +9,8 @@ body {
 }
 
 .entire-quiz {
-    border: 2px solid green;
+    border: 25px solid green;
+    padding: 30px;
 }
 
 #title {
