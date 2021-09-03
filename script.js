@@ -17,7 +17,7 @@ function buildQuiz() {
                         <input type="radio" name="question${questionNumber}" value="${letter}">
                             ${letter}:
                             ${currentQuestion.answers[letter]}
-                    </label>`
+                     </label>`
                 );
             }
             // add question and its answers to the output
@@ -36,6 +36,7 @@ function buildQuiz() {
    }
 
 // html elements and their references in VARIABLES
+const titleContainer = document.getElementById('title')
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
