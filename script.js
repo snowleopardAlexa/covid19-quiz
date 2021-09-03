@@ -56,7 +56,34 @@ const submitButton = document.getElementById('submit');
 
 // functions
 function buildQuiz() {
+ // variable to store the html output
+ const output = [];
 
+ // for each question
+ covidQuestions.forEach(
+     (currentQuestion, questionNumber) => {
+         // variable to store the list of possible answers
+         const answers = [];
+         // and for each available answer 
+         for(letter in currentQuestion.answers) {
+             // add html radio button
+             answers.push(
+                 `<label>
+                     <input type="radio" name="question${questionNumber}" value="${letter}">
+                         ${letter}:
+                         ${currentQuestion.answers[letter]}
+                 </label>`
+             );
+         }
+         // add question and its answers to the output
+         output.push(
+             `<div class="question">${currentQuestion.question} </div>
+              <div class="answers">${answers.join('')} </div>`
+         );
+      }
+   );
+   // combine output list into one string of html and put it on the page
+   quizContainer.innerHTML = output.join('');
 }
 
 function showResults() {
