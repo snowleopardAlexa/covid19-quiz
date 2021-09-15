@@ -8,6 +8,11 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.entire-quiz {
+    border: 25px solid green;
+    padding: 30px;
+}
+
 #title {
     margin: 50px 0 0 50px;
     font-size: 1.6rem;
@@ -44,5 +49,5 @@ body {
     cursor: pointer;
 }
 #submit:hover {
-    background-color: rgb(150, 91, 20);
+    background-color: rgb(20, 150, 128);
 }

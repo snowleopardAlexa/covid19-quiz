@@ -31,8 +31,16 @@ function buildQuiz() {
       quizContainer.innerHTML = output.join('');
    }
    
+   // displaying the quiz results
    function showResults() {
-   
+     // gather answer containers from our quiz 
+     const answerContainers = quizContainer.querySelectorAll('.answers');
+     // keep tracj of user's answers
+     let numCorrect = 0;
+     // for each question
+     myQuestions.forEach((currentQuestion, questionNumber) => {
+       
+     })
    }
 
 // html elements and their references in VARIABLES
@@ -88,10 +96,19 @@ const covidQuestions = [
          c: "go to the mall to buy new clothes"
      },
        correctAnswer: "a"
+    },
+    {
+        question: "What you should do when you feel a shortage of breath that disables you to breathe?",
+        answers: {
+          a: "head to the nearest hospital, mask on the face, distance from the people",
+          b: "don't worry, it is temporary",
+          c: "have a shot of vodka"
+    },
+        correctAnswer: "a"
   }
  ];
 
-// DISPLAY QUIZ right away
+// PRINT THE QUIZ right away
 buildQuiz();
 
 // EVENT LISTENERS - show results on submit
