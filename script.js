@@ -35,7 +35,7 @@ function buildQuiz() {
    function showResults() {
      // gather answer containers from our quiz 
      const answerContainers = quizContainer.querySelectorAll('.answers');
-     // keep tracj of user's answers
+     // keep trac of user's answers
      let numCorrect = 0;
      // for each question
      myQuestions.forEach((currentQuestion, questionNumber) => {
