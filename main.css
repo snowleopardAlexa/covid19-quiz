@@ -46,3 +46,8 @@ body {
 #submit:hover {
     background-color: rgb(150, 91, 20);
 }
+
+#results {
+    color: #000;
+    font-size: 1.3rem;
+}

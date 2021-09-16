@@ -1,4 +1,5 @@
 // FUNCTIONS
+(function(){
 function buildQuiz() {
     // variable to store the html output
     const output = [];
@@ -55,11 +56,11 @@ function buildQuiz() {
            // if answer is wrong or blank
            else {
                // color the answers red
-               answerContainers[questionNumber].style.color = 'red';
+               answerContainer[questionNumber].style.color = 'red';
            }
        });
        // show number of correct answers out of total
-       resultsContainer.innerHTML = `${numCorrect} out of ${covidQuestion.length}`;
+       resultsContainer.innerHTML = `${numCorrect} out of ${covidQuestions.length}`;
     }
 
 // html elements and their references in VARIABLES
@@ -123,7 +124,7 @@ buildQuiz();
 
 // EVENT LISTENERS - show results on submit
 submitButton.addEventListener('click', showResults);
-
+})();
 
 
 
