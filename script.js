@@ -61,9 +61,9 @@ function buildQuiz() {
            }
        });
        // show number of correct answers out of total
-       resultsContainer.innerHTML = `${numCorrect} out of ${covidQuestions.length}`;
+       resultsContainer.innerHTML = `${numCorrect} out of ${covidQuestions.length} correct answers`;
     }
-    
+
 // html elements and their references in VARIABLES
 const titleContainer = document.getElementById('title');
 const quizContainer = document.getElementById('quiz');
