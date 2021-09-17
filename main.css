@@ -49,5 +49,13 @@ body {
     cursor: pointer;
 }
 #submit:hover {
-    background-color: rgb(20, 150, 128);
+    background-color: rgb(17, 177, 150);
+}
+
+#results {
+    color: #000;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
 }

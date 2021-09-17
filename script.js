@@ -1,4 +1,7 @@
-// FUNCTIONS
+// wrapping the whole quiz in an IIFE - immediately invoked function expression -
+// a function that runs as soon as you define it. It keeps variables out of global
+// scope and ensure that the quiz doesn't interfere with any other scripts running on the page. 
+(function(){
 function buildQuiz() {
     // variable to store the html output
     const output = [];
@@ -33,18 +36,38 @@ function buildQuiz() {
    
    // displaying the quiz results
    function showResults() {
-     // gather answer containers from our quiz 
-     const answerContainers = quizContainer.querySelectorAll('.answers');
-     // keep tracj of user's answers
-     let numCorrect = 0;
-     // for each question
-     myQuestions.forEach((currentQuestion, questionNumber) => {
-       
-     })
-   }
+       // gather answer containers from quiz
+       const answerContainers = quizContainer.querySelectorAll('.answers');
+       // keep track of user's answers
+       let numCorrect = 0;
+
+       // for each question...
+       covidQuestions.forEach((currentQuestion, questionNumber) => {
+           // find selected answer
+           const answerContainer = answerContainers[questionNumber];
+           const selector = `input[name=question${questionNumber}]:checked`;
+           const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+           // if answer is correct
+           if(userAnswer === currentQuestion.correctAnswer) {
+               // add to the number of correct answers
+               numCorrect ++;
+
+               // color the answers green
+               answerContainers[questionNumber].style.color = 'green';
+           }
+           // if answer is wrong or blank
+           else {
+               // color the answers red
+               answerContainers[questionNumber].style.color = 'red';
+           }
+       });
+       // show number of correct answers out of total
+       resultsContainer.innerHTML = `${numCorrect} out of ${covidQuestions.length} correct answers`;
+    }
 
 // html elements and their references in VARIABLES
-const titleContainer = document.getElementById('title')
+const titleContainer = document.getElementById('title');
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
@@ -55,7 +78,7 @@ const covidQuestions = [
     {
         question: "What is the covid19 known commonly as a coronavirus?",
         answers: {
-            a: "It is an infectious disease causd by the SARS-CoV-2 virus",
+            a: "It is an infectious disease caused by the SARS-CoV-2 virus",
             b: "It is a movie",
             c: "It is a type of a chronic pain"
         },
@@ -113,7 +136,7 @@ buildQuiz();
 
 // EVENT LISTENERS - show results on submit
 submitButton.addEventListener('click', showResults);
-
+})();
 
 
 
