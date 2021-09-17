@@ -1,4 +1,6 @@
-// FUNCTIONS
+// wrapping the whole quiz in an IIFE - immediately invoked function expression -
+// a function that runs as soon as you define it. It keeps variables out of global
+// scope and ensure that the quiz doesn't interfere with any other scripts running on the page. 
 (function(){
 function buildQuiz() {
     // variable to store the html output
@@ -76,7 +78,7 @@ const covidQuestions = [
     {
         question: "What is the covid19 known commonly as a coronavirus?",
         answers: {
-            a: "It is an infectious disease causd by the SARS-CoV-2 virus",
+            a: "It is an infectious disease caused by the SARS-CoV-2 virus",
             b: "It is a movie",
             c: "It is a type of a chronic pain"
         },
