@@ -32,6 +32,7 @@ function buildQuiz() {
       quizContainer.innerHTML = output.join('');
    }
    
+   // displaying the quiz results
    function showResults() {
        // gather answer containers from quiz
        const answerContainers = quizContainer.querySelectorAll('.answers');
@@ -51,20 +52,20 @@ function buildQuiz() {
                numCorrect ++;
 
                // color the answers green
-               answerContainer[questionNumber].style.color = 'green';
+               answerContainers[questionNumber].style.color = 'green';
            }
            // if answer is wrong or blank
            else {
                // color the answers red
-               answerContainer[questionNumber].style.color = 'red';
+               answerContainers[questionNumber].style.color = 'red';
            }
        });
        // show number of correct answers out of total
        resultsContainer.innerHTML = `${numCorrect} out of ${covidQuestions.length}`;
     }
-
+    
 // html elements and their references in VARIABLES
-const titleContainer = document.getElementById('title')
+const titleContainer = document.getElementById('title');
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
@@ -116,10 +117,19 @@ const covidQuestions = [
          c: "go to the mall to buy new clothes"
      },
        correctAnswer: "a"
+    },
+    {
+        question: "What you should do when you feel a shortage of breath that disables you to breathe?",
+        answers: {
+          a: "head to the nearest hospital, mask on the face, distance from the people",
+          b: "don't worry, it is temporary",
+          c: "have a shot of vodka"
+    },
+        correctAnswer: "a"
   }
  ];
 
-// DISPLAY QUIZ right away
+// PRINT THE QUIZ right away
 buildQuiz();
 
 // EVENT LISTENERS - show results on submit
